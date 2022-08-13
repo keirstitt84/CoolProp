@@ -1,0 +1,30 @@
+based on http://www.coolprop.org/coolprop/wrappers/StaticLibrary/index.html
+	[https://web.archive.org/web/20211230042344/http://www.coolprop.org/coolprop/wrappers/StaticLibrary/index.html]
+
+# Check out the sources for CoolProp
+git clone https://github.com/CoolProp/CoolProp --recursive
+# Move into the folder you just created
+cd CoolProp
+# Make a build folder
+mkdir -p build && cd build
+# Build the makefile using CMake - update visual stuido version based on
+# contemporary version
+cmake .. -G "Visual Studio 16 2019" -A "x64" -DCOOLPROP_STATIC_LIBRARY=ON
+# Make the static library
+cmake --build .
+
+
+
+To make it work we need:
+* fmtlib
+
+
+
+
+FMTLIB
+
+git clone https://github.com/fmtlib/fmt --recursive
+cd fmt
+mkdir -p build && cd build
+cmake .. -G "Visual Studio 16 2019" -A "x64"
+cmake --build .
